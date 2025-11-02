@@ -1,0 +1,30 @@
+@keyframes hologramFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes cyberGlow {
+    0%, 100% { 
+        text-shadow: 0 0 5px #00ffff,
+                     0 0 10px #00ffff,
+                     0 0 15px #00ffff;
+    }
+    50% { 
+        text-shadow: 0 0 10px #00ffff,
+                     0 0 20px #00ffff,
+                     0 0 30px #00ffff,
+                     0 0 40px #00ffff;
+    }
+}
+
+.hologram-text {
+    animation: hologramFlicker 3s infinite, cyberGlow 2s infinite;
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+    background: 
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+}

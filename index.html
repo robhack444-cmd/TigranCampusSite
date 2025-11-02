@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoCollege | Образование Будущего</title>
+    
+    <!-- AI Meta Tags -->
+    <meta name="ai-assisted" content="true">
+    <meta name="blockchain-verified" content="true">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/vr.css">
+</head>
+<body class="bg-slate-950 text-white overflow-x-hidden">
+    <!-- AI Assistant Floating -->
+    <div id="ai-assistant" class="fixed bottom-6 right-6 z-50">
+        <div class="ai-avatar glass-morphism rounded-full p-4 cursor-pointer neon-cyan-glow">
+            <i class="fas fa-robot text-2xl"></i>
+        </div>
+    </div>
+
+    <!-- Neuro Navigation -->
+    <nav class="neuro-nav fixed w-full z-40">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="college-logo holographic-card rounded-lg p-2">
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                            NEO<span class="text-white">COLLEGE</span>
+                        </h1>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#campus" class="nav-link hover:text-cyan-300 transition-all duration-300">VR Кампус</a>
+                    <a href="#programs" class="nav-link hover:text-cyan-300 transition-all duration-300">Программы</a>
+                    <a href="#ai-learning" class="nav-link hover:text-cyan-300 transition-all duration-300">AI Обучение</a>
+                    <a href="#blockchain" class="nav-link hover:text-cyan-300 transition-all duration-300">Blockchain Дипломы</a>
+                    <a href="#admission" class="nav-link hover:text-cyan-300 transition-all duration-300">Поступление</a>
+                </div>
+
+                <button class="cta-button neuro-button px-6 py-3 rounded-full">
+                    <span class="flex items-center space-x-2">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Поступить</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Campus -->
+    <section class="hero-section min-h-screen relative flex items-center justify-center">
+        <div id="3d-campus" class="absolute inset-0 z-0"></div>
+        
+        <div class="hero-content text-center z-10 relative">
+            <div class="floating-element mb-8">
+                <h2 class="text-7xl font-bold mb-6">
+                    <span class="text-white">ОБРАЗОВАНИЕ</span>
+                    <span class="block text-cyan-400 mt-2">БУДУЩЕГО</span>
+                </h2>
+            </div>
+            
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Виртуальные классы • AI преподаватели • Blockchain дипломы • Нейро-интерфейсы
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="neuro-button-lg px-8 py-4 rounded-xl text-lg">
+                    <i class="fas fa-vr-cardboard mr-2"></i>
+                    VR Тур по кампусу
+                </button>
+                <button class="glass-button px-8 py-4 rounded-xl text-lg">
+                    <i class="fas fa-brain mr-2"></i>
+                    AI Тестирование
+                </button>
+            </div>
+        </div>
+
+        <!-- Animated Stats -->
+        <div class="absolute bottom-10 left-0 right-0">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="stat-card glass-morphism rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-cyan-400">97%</div>
+                        <div class="text-sm">Трудоустройство</div>
+                    </div>
+                    <div class="stat-card glass-morphism rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-cyan-400">AI</div>
+                        <div class="text-sm">Преподаватели</div>
+                    </div>
+                    <div class="stat-card glass-morphism rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-cyan-400">VR</div>
+                        <div class="text-sm">Лаборатории</div>
+                    </div>
+                    <div class="stat-card glass-morphism rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-cyan-400">NFT</div>
+                        <div class="text-sm">Дипломы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VR Campus Section -->
+    <section id="campus" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title text-5xl font-bold text-center mb-16">
+                VR <span class="text-cyan-400">КАМПУС</span>
+            </h3>
+            
+            <div class="vr-container rounded-2xl overflow-hidden">
+                <div id="vr-viewport" class="w-full h-96 md:h-[600px]">
+                    <!-- Three.js VR Renderer Here -->
+                </div>
+                <div class="vr-controls glass-morphism p-4 flex justify-center space-x-4">
+                    <button class="vr-btn"><i class="fas fa-walking"></i></button>
+                    <button class="vr-btn"><i class="fas fa-expand"></i></button>
+                    <button class="vr-btn"><i class="fas fa-vr-cardboard"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Learning Section -->
+    <section id="ai-learning" class="py-20">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title text-5xl font-bold text-center mb-16">
+                AI <span class="text-cyan-400">ОБУЧЕНИЕ</span>
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Card -->
+                <div class="ai-card holographic-card rounded-xl p-6">
+                    <div class="text-cyan-400 text-4xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Персональный AI Наставник</h4>
+                    <p class="text-gray-300 mb-4">Адаптивная программа обучения под твой стиль восприятия</p>
+                    <div class="ai-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 87%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neural Network Card -->
+                <div class="ai-card holographic-card rounded-xl p-6">
+                    <div class="text-cyan-400 text-4xl mb-4">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Нейро-Интерфейсы</h4>
+                    <p class="text-gray-300 mb-4">Обучение через нейронные связи и VR immersion</p>
+                    <div class="neural-activity">
+                        <div class="neural-wave"></div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Card -->
+                <div class="ai-card holographic-card rounded-xl p-6">
+                    <div class="text-cyan-400 text-4xl mb-4">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Blockchain Дипломы</h4>
+                    <p class="text-gray-300 mb-4">Вечные NFT дипломы в блокчейне</p>
+                    <div class="blockchain-animation">
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Programs -->
+    <section id="programs" class="py-20">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title text-5xl font-bold text-center mb-16">
+                ПРОГРАММЫ <span class="text-cyan-400">ОБУЧЕНИЯ</span>
+            </h3>
+
+            <div class="programs-grid grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="program-card neuro-card rounded-2xl p-8">
+                    <div class="program-icon text-5xl text-cyan-400 mb-6">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">AI Разработка</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> Нейронные сети</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> Machine Learning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> Computer Vision</li>
+                    </ul>
+                    <button class="neuro-button w-full py-3 rounded-xl">Выбрать программу</button>
+                </div>
+
+                <div class="program-card neuro-card rounded-2xl p-8">
+                    <div class="program-icon text-5xl text-cyan-400 mb-6">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Metaverse Дизайн</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> 3D Моделирование</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> VR Разработка</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> NFT Создание</li>
+                    </ul>
+                    <button class="neuro-button w-full py-3 rounded-xl">Выбрать программу</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blockchain Diplomas -->
+    <section id="blockchain" class="py-20">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title text-5xl font-bold text-center mb-16">
+                NFT <span class="text-cyan-400">ДИПЛОМЫ</span>
+            </h3>
+
+            <div class="nft-diploma-container max-w-4xl mx-auto">
+                <div class="nft-card holographic-card rounded-2xl p-8 text-center">
+                    <div class="nft-badge text-6xl mb-6">🎓</div>
+                    <h4 class="text-3xl font-bold mb-4">Digital Diploma NFT</h4>
+                    <p class="text-xl mb-6">Твой диплом хранится вечно в блокчейне</p>
+                    
+                    <div class="blockchain-info grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <div class="info-item">
+                            <div class="text-2xl text-cyan-400"><i class="fas fa-shield-alt"></i></div>
+                            <div>Защищено</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="text-2xl text-cyan-400"><i class="fas fa-infinity"></i></div>
+                            <div>Вечное хранение</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="text-2xl text-cyan-400"><i class="fas fa-globe"></i></div>
+                            <div>Верификация</div>
+                        </div>
+                    </div>
+
+                    <button class="neuro-button-lg px-8 py-4 rounded-xl">
+                        <i class="fas fa-download mr-2"></i>
+                        Скачать MetaMask для получения
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="neuro-footer py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="footer-col">
+                    <h5 class="text-lg font-bold mb-4">NEOCOLLEGE</h5>
+                    <p class="text-gray-400">Образование следующего поколения</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h5 class="text-lg font-bold mb-4">Технологии</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400">VR Кампус</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400">AI Обучение</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400">Blockchain</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5 class="text-lg font-bold mb-4">Контакты</h5>
+                    <div class="social-links flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 text-xl"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 text-xl"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5 class="text-lg font-bold mb-4">Поступление</h5>
+                    <button class="neuro-button w-full py-3">Подать заявку</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/threejs-campus.js"></script>
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/vr-tour.js"></script>
+    <script src="js/blockchain-diploma.js"></script>
+    <script src="modules/digital-campus.js"></script>
+    <script src="modules/smart-schedule.js"></script>
+    
+    <script>
+        // Initialize all modules
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize 3D Campus
+            const campus = new ThreeJSCampus();
+            
+            // Initialize AI Assistant
+            const aiAssistant = new AIAssistant();
+            
+            // Initialize VR Tour
+            const vrTour = new VRTour();
+        });
+    </script>
+</body>
+</html>
